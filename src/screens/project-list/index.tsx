@@ -4,7 +4,8 @@ import { SearchPanel } from "./search-panel"
 import { List } from "./list"
 import {cleanObject, useMount, useDebounce} from "../utils"
 import * as qs from "qs"
-
+// The students that use JS find issue at runtime.
+// we wish to find the issue at static code instead of runtime. that's the advantage of strong type.
 const apiUrl = process.env.REACT_APP_API_URL
 
 export const ProjectListScreen = () => {
@@ -12,7 +13,7 @@ export const ProjectListScreen = () => {
         name: '',
         personId: ''
     })
-    const debouncedParam = useDebounce(param, 2000)
+    const debouncedParam = useDebounce(param, 200)
     const [users, setUsers] = useState([])
     const [list, setList] = useState([])
 
@@ -25,7 +26,7 @@ export const ProjectListScreen = () => {
     }, [debouncedParam])
 
     useMount(() => {
-        fetch(`${apiUrl}/users`).then(async response => {
+        fetch(`${apiUrl}/users`).then(async response => { 
             if(response.ok) {
                 setUsers(await response.json())
             }
