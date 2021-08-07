@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export const isFalsy = (value: any) => value === 0 ? false : !value
+export const isFalsy = (value: unknown) => value === 0 ? false : !value
 
 // don't change the import object
 export const cleanObject = (object: object) => {
@@ -23,7 +23,8 @@ export const useMount = (callback: () => void) => {
     }, [])
 }
 
-export const useDebounce = (value: any, delay?: number) => {
+//TODO use flood type to update this in future
+export const useDebounce = (value: unknown, delay?: number): any => {
     const [debouncedValue, setDebouncedValue] = useState(value)
 
     useEffect(() => {
