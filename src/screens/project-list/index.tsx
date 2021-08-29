@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from "react"
 import { SearchPanel } from "./search-panel"
 import { List } from "./list"
-import {cleanObject, useMount, useDebounce} from "../utils"
+import {cleanObject, useMount, useDebounce} from "../../utils"
 import * as qs from "qs"
 // The students that use JS find issue at runtime.
 // we wish to find the issue at static code instead of runtime. that's the advantage of strong type.
