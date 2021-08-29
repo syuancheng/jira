@@ -1,5 +1,5 @@
 import React from 'react'
-import {useMount} from "./utils"
+import {useMount, useArray} from "./screens/utils";
 
 export const TsReactTest = () => {
     const persons: { name: string; age: number}[] = [
@@ -12,7 +12,6 @@ export const TsReactTest = () => {
     useMount(() => {
 
     })
-
 
     return (
         <div>
